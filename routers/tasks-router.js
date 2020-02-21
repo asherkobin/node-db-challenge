@@ -13,6 +13,17 @@ tasksRouter.get("/", async (req, res) => {
   }
 });
 
+tasksRouter.get("/:id", async (req, res) => {
+  try {
+    const task = await tasksModel.findById(req.params.id);
+    
+    res.status(200).json(task);
+  }
+  catch(e) {
+    res.status(500).json("Error reading task" + e);
+  }
+});
+
 tasksRouter.post("/", async (req, res) => {
   const tasksToAdd = req.body;
   
