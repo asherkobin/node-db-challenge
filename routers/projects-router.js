@@ -13,6 +13,17 @@ projectsRouter.get("/", async (req, res) => {
   }
 });
 
+projectsRouter.get("/:id", async (req, res) => {
+  try {
+    const project = await projectsModel.findById(req.params.id);
+    
+    res.status(200).json(project);
+  }
+  catch(e) {
+    res.status(500).json("Error reading project" + e);
+  }
+});
+
 projectsRouter.post("/", async (req, res) => {
   const projectToAdd = req.body;
 
