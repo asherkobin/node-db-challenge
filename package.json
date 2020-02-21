@@ -1,0 +1,25 @@
+{
+  "name": "db-challenge",
+  "version": "1.0.0",
+  "description": "Sprint Challenge",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asherkobin/node-db-challenge.git"
+  },
+  "author": "Asher Kobin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asherkobin/node-db-challenge/issues"
+  },
+  "homepage": "https://github.com/asherkobin/node-db-challenge#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.20.10",
+    "nodemon": "^2.0.2",
+    "sqlite3": "^4.1.1"
+  }
+}
