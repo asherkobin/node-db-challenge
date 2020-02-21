@@ -47,4 +47,19 @@ projectsRouter.post("/", async (req, res) => {
   }
 });
 
+projectsRouter.post("/:projectId", async (req, res) => {
+  const projectId = req.params.projectId;
+  const resourceId = req.body.resourceId;
+
+  console.log(`Adding Relation: projectId=${projectId}, resourceId=${resourceId}`);
+
+  try {
+    projectsModel.addResource(projectId, resourceId);
+    res.status(201).json("Relation Created");
+  }
+  catch(e) {
+    res.status(500).json("Error creating relationshiop: " + e);
+  }
+});
+
 module.exports = projectsRouter;

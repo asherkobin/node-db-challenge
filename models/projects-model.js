@@ -28,8 +28,16 @@ async function add(projectInfo) {
   return findById(ids[0]);
 }
 
+async function addResource(projectId, resourceId) {
+  return await DB("Projects_Resources_Relation").insert({
+    project_id: projectId,
+    resource_id: resourceId
+  });
+}
+
 module.exports = {
   find,
   findById,
-  add
+  add,
+  addResource
 };
